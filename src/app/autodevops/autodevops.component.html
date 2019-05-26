@@ -1,0 +1,83 @@
+<p>
+  Welcome to DevOpsAutomation
+</p>
+<div class="form-horizontal">
+  <h1>Build Details Form</h1>
+  <form (ngSubmit)="submit()" #buildForm="ngForm">
+    <div class="form-horizontal">
+      <label for="gitUrl">Git Url</label>
+      <input type="text" class="form-horizontal" id="gitUrl"
+             required
+             [(ngModel)]="model.gitUrl" name="gitUrl"
+             #name="ngModel">
+    </div>
+    <br>
+    <div class="dropdown">
+      <label for="os">Operating System</label>
+      <select id = "model.os"
+          required
+          [(ngModel)]="model.os" name="os"
+            #os="ngModel">
+        <option value = "windows">Windows</option>
+        <option value = "linux">Linux</option>
+        <option value = "macos">Mac OS</option>
+      </select>
+    </div>
+    <br>
+    <div class="dropdown">
+      <label for="buildTools">Build Tool</label>
+      <select id = "buildTools" 
+          required
+          [(ngModel)]="model.buildTools" name="buildTools"
+            #os="ngModel">
+        <option value = "maven">Maven</option>
+        <option value = "gradle">Gradle</option>
+      </select>
+    </div>
+    <br>
+    <div class="dropdown">
+      <label for="Language">Language</label>
+      <select id = "language" 
+          required
+          [(ngModel)]="model.language" name="language"
+            #language="ngModel">
+        <option value = "Java">Java</option>
+        <option value = "Python">Python</option>
+        <option value = "Angular">Angular</option>
+      </select>
+    </div>
+    <br>
+    <div class="dropdown">
+      <label for="version">Version</label>
+      <select id = "version"
+          required
+          [(ngModel)]="model.version" name="version"
+            #version="ngModel">
+        <option value = "java8">Java 8</option>
+        <option value = "python2.2.7">Python 2.2.7</option>
+        <option value = "angular6 ">Angular 6</option>
+      </select>
+    </div>
+    <br>
+    <div class="dropdown">
+      <label for="cloud">Cloud Environment</label>
+      <select id = "cloud"
+          required
+          [(ngModel)]="model.cloud" name="cloud"
+            #version="ngModel">
+        <option value = "openshift">Open Shift</option>
+        <option value = "aws">AWS</option>
+        <option value = "pcf ">PCF</option>
+      </select>
+    </div>
+    <br>
+    <div class="dropdown">
+      <label for="dockerize">Dockerize</label>
+      <input type="checkbox" id="dockerize"
+             required
+             [(ngModel)]="model.dockerize" name="dockerize"
+             #dockerize="ngModel">
+    </div>
+    <button class="btn btn-primary" (click)="submitted">Build</button>
+  </form>
+</div>
